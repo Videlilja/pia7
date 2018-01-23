@@ -17,5 +17,7 @@ public class CategoriesActivity extends AppCompatActivity {
 
     public static void start(Context context){
         context.startActivity(new Intent(context,CategoriesActivity.class));
+
+        //Hejsan
     }
 }
