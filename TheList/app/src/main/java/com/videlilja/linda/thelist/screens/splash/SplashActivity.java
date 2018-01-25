@@ -1,5 +1,6 @@
 package com.videlilja.linda.thelist.screens.splash;
 
+import android.arch.lifecycle.ViewModelProviders;
 import android.content.Context;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -16,6 +17,8 @@ public class SplashActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
         CategoriesActivity.start(this);
+
+        SplashViewModel viewModel = ViewModelProviders.of(this).get(SplashViewModel.class);
     }
 
     public static void start(Context context) {
