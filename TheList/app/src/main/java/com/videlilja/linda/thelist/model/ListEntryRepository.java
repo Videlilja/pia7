@@ -1,4 +1,4 @@
-package com.videlilja.linda.thelist.screens.categories;
+package com.videlilja.linda.thelist.model;
 
 import android.arch.lifecycle.LiveData;
 import android.arch.lifecycle.MutableLiveData;
@@ -11,12 +11,16 @@ import java.util.List;
  * Created by lenajehart-mizander on 2018-01-29.
  */
 
-public class TimeEntryRepository {
+public class ListEntryRepository {
 
-    private MutableLiveData<List<ListEntry>> entries; = new MutableLiveData<>()
+    private ListEntryDao mListEntryDao;
+
+    public ListEntryRepository(ListEntryDao listEntryDao) {
+        mListEntryDao = listEntryDao;
+    }
 
     public LiveData<List<ListEntry>> getAll() {
-        return entries;
+        return mListEntryDao.read();
 
     }
 
