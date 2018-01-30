@@ -8,13 +8,7 @@ import android.arch.persistence.room.RoomDatabase;
  */
 @Database(entities = {CategoriesEntry.class}, version = 1, exportSchema = false)
 public abstract class TheListDatabase extends RoomDatabase {
-<<<<<<< HEAD
 
-    public abstract ListEntryDao getListEntrydao ();
-
-
-
-=======
     public abstract CategoriesEntryDao getListEntrydao ();
->>>>>>> da98c4bb21e1ed9f8d3f221926956811b301757f
+
 }

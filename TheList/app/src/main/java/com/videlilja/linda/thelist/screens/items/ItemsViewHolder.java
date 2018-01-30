@@ -27,7 +27,7 @@ public class ItemsViewHolder extends RecyclerView.ViewHolder {
     public void bind(CategoriesEntry entry){
         listEntry = entry;
 
-        itemName.setText(entry.getItemName());
+        itemName.setText(entry.getCategoryName());
     }
     public static ItemsViewHolder NewInstance(ViewGroup parent){
         return new ItemsViewHolder(

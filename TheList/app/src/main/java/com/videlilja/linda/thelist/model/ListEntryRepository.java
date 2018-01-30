@@ -3,7 +3,7 @@ package com.videlilja.linda.thelist.model;
 import android.arch.lifecycle.LiveData;
 import android.arch.lifecycle.MutableLiveData;
 
-import com.videlilja.linda.thelist.model.ListEntry;
+import com.videlilja.linda.thelist.model.CategoriesEntry;
 
 import java.util.List;
 
@@ -13,13 +13,13 @@ import java.util.List;
 
 public class ListEntryRepository {
 
-    private ListEntryDao mListEntryDao;
+    private CategoriesEntryDao mListEntryDao;
 
-    public ListEntryRepository(ListEntryDao listEntryDao) {
+    public ListEntryRepository(CategoriesEntryDao listEntryDao) {
         mListEntryDao = listEntryDao;
     }
 
-    public LiveData<List<ListEntry>> getAll() {
+    public LiveData<List<CategoriesEntry>> getAll() {
         return mListEntryDao.read();
 
     }

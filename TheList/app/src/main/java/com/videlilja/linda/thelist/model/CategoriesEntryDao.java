@@ -18,7 +18,7 @@ public interface CategoriesEntryDao {
     @Insert
     void insert(CategoriesEntry...entries);
 
-    @Query("SELECT * FROM CategoriesEntry")
+    @Query("SELECT * FROM list_entries")
     LiveData<List<CategoriesEntry>> read();
 
     @Update
