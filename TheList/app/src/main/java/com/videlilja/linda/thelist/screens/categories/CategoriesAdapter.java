@@ -3,7 +3,7 @@ package com.videlilja.linda.thelist.screens.categories;
 import android.support.v7.widget.RecyclerView;
 import android.view.ViewGroup;
 
-import com.videlilja.linda.thelist.model.ListEntry;
+import com.videlilja.linda.thelist.model.CategoriesEntry;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -14,7 +14,7 @@ import java.util.List;
 
 public class CategoriesAdapter extends RecyclerView.Adapter<categoriesViewHolder> {
 
-    private List<ListEntry> ListEntryList = new ArrayList<>();
+    private List<CategoriesEntry> ListEntryList = new ArrayList<>();
 
 
     @Override
@@ -31,7 +31,7 @@ public class CategoriesAdapter extends RecyclerView.Adapter<categoriesViewHolder
         holder.bind(ListEntryList.get(position));
     }
 
-    public void setListEntryList(List<ListEntry> listEntryList) {
+    public void setListEntryList(List<CategoriesEntry> listEntryList) {
         ListEntryList = listEntryList;
         notifyDataSetChanged();
     }

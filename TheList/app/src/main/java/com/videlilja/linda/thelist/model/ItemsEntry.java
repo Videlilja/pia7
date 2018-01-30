@@ -5,16 +5,14 @@ import android.arch.persistence.room.Entity;
 import android.arch.persistence.room.PrimaryKey;
 
 /**
- * Created by Linda on 2018-01-24.
+ * Created by Linda on 2018-01-30.
  */
 @Entity(tableName = "list_entries")
-public class ListEntry {
+public class ItemsEntry {
+
     @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = "id")
     private int id;
-
-    @ColumnInfo(name = "catergoryName")
-    private String categoryName;
 
     @ColumnInfo(name = "itemName")
     private String itemName;
@@ -27,19 +25,8 @@ public class ListEntry {
         this.id = id;
     }
 
-    public String getCategoryName() {
-        return categoryName;
-    }
-
-    public void setCategoryName(String categoryName) {
-        this.categoryName = categoryName;
-    }
-
     public String getItemName() {
         return itemName;
     }
 
-    public void setItemName(String itemName) {
-        this.itemName = itemName;
-    }
 }

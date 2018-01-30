@@ -3,7 +3,7 @@ package com.videlilja.linda.thelist.screens.items;
 import android.support.v7.widget.RecyclerView;
 import android.view.ViewGroup;
 
-import com.videlilja.linda.thelist.model.ListEntry;
+import com.videlilja.linda.thelist.model.CategoriesEntry;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -14,7 +14,7 @@ import java.util.List;
 
 public class ItemsAdapter extends RecyclerView.Adapter<ItemsViewHolder> {
 
-    private List<ListEntry> listEntryList = new ArrayList<>();
+    private List<CategoriesEntry> listEntryList = new ArrayList<>();
 
     @Override
     public int getItemCount() {
@@ -32,7 +32,7 @@ public class ItemsAdapter extends RecyclerView.Adapter<ItemsViewHolder> {
 
     }
 
-    public void setListEntryList(List<ListEntry> listEntryList) {
+    public void setListEntryList(List<CategoriesEntry> listEntryList) {
         this.listEntryList = listEntryList;
         notifyDataSetChanged();
     }
