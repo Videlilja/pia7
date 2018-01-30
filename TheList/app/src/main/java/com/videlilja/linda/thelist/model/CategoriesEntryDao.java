@@ -13,18 +13,18 @@ import java.util.List;
  * Created by Linda on 2018-01-24.
  */
 @Dao
-public interface ListEntryDao {
+public interface CategoriesEntryDao {
 
     @Insert
-    void insert(ListEntry...entries);
+    void insert(CategoriesEntry...entries);
 
-    @Query("SELECT * FROM list_entries")
-    LiveData<List<ListEntry>> read();
+    @Query("SELECT * FROM CategoriesEntry")
+    LiveData<List<CategoriesEntry>> read();
 
     @Update
-    void update(ListEntry...entries);
+    void update(CategoriesEntry...entries);
 
     @Delete
-    void delete(ListEntry...entries);
+    void delete(CategoriesEntry...entries);
 
 }

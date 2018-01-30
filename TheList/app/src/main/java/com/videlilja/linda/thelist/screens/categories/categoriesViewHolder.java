@@ -7,7 +7,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.videlilja.linda.thelist.R;
-import com.videlilja.linda.thelist.model.ListEntry;
+import com.videlilja.linda.thelist.model.CategoriesEntry;
 
 /**
  * Created by Linda on 2018-01-26.
@@ -15,7 +15,7 @@ import com.videlilja.linda.thelist.model.ListEntry;
 
 public class categoriesViewHolder extends RecyclerView.ViewHolder {
 
-    private ListEntry listEntry;
+    private CategoriesEntry listEntry;
     private TextView categoryName;
 
     public categoriesViewHolder(View itemView) {
@@ -23,7 +23,7 @@ public class categoriesViewHolder extends RecyclerView.ViewHolder {
 
         categoryName = itemView.findViewById(R.id.category_name);
     }
-    public void bind(ListEntry entry){
+    public void bind(CategoriesEntry entry){
         listEntry = entry;
 
         categoryName.setText(entry.getCategoryName());

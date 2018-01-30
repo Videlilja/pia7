@@ -11,7 +11,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
 import com.videlilja.linda.thelist.R;
-import com.videlilja.linda.thelist.model.ListEntry;
+import com.videlilja.linda.thelist.model.CategoriesEntry;
 
 import java.util.List;
 
@@ -28,9 +28,9 @@ public class CategoriesActivity extends AppCompatActivity {
         RecyclerView categoryList = findViewById(R.id.category_list);
         categoryList.setLayoutManager(new LinearLayoutManager(this));
         categoryList.setAdapter(new CategoriesAdapter());
-        viewModel.getCategory().observe(this, new Observer<List<ListEntry>>() {
+        viewModel.getCategory().observe(this, new Observer<List<CategoriesEntry>>() {
             @Override
-            public void onChanged(@Nullable List<ListEntry> listEntries) {
+            public void onChanged(@Nullable List<CategoriesEntry> listEntries) {
 
             }
         });

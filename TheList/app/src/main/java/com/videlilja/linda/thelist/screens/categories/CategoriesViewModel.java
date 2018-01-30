@@ -4,7 +4,7 @@ import android.arch.lifecycle.LiveData;
 import android.arch.lifecycle.MutableLiveData;
 import android.arch.lifecycle.ViewModel;
 
-import com.videlilja.linda.thelist.model.ListEntry;
+import com.videlilja.linda.thelist.model.CategoriesEntry;
 
 import java.util.List;
 
@@ -13,9 +13,9 @@ import java.util.List;
  */
 
 public class CategoriesViewModel extends ViewModel {
-    private MutableLiveData<List<ListEntry>> category = new MutableLiveData<>();
+    private MutableLiveData<List<CategoriesEntry>> category = new MutableLiveData<>();
 
-    public LiveData<List<ListEntry>> getCategory() {
+    public LiveData<List<CategoriesEntry>> getCategory() {
         return category;
     }
 
