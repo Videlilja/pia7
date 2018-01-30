@@ -8,5 +8,9 @@ import android.arch.persistence.room.RoomDatabase;
  */
 @Database(entities = {ListEntry.class}, version = 1, exportSchema = false)
 public abstract class TheListDatabase extends RoomDatabase {
+
     public abstract ListEntryDao getListEntrydao ();
+
+
+
 }
