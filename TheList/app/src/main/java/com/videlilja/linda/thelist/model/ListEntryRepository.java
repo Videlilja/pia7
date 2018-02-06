@@ -1,9 +1,6 @@
 package com.videlilja.linda.thelist.model;
 
 import android.arch.lifecycle.LiveData;
-import android.arch.lifecycle.MutableLiveData;
-
-import com.videlilja.linda.thelist.model.CategoriesEntry;
 
 import java.util.List;
 
@@ -24,5 +21,7 @@ public class ListEntryRepository {
 
     }
 
-
+    public void create(CategoriesEntry entry) {
+        mListEntryDao.insert(entry);
+    }
 }

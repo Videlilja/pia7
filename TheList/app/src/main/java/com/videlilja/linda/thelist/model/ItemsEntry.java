@@ -13,6 +13,8 @@ public class ItemsEntry {
     @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = "id")
     private int id;
+    @ColumnInfo(name = "categoryId")
+    private int categoryId;
 
     @ColumnInfo(name = "itemName")
     private String itemName;
@@ -29,4 +31,11 @@ public class ItemsEntry {
         return itemName;
     }
 
+    public int getCategoryId() {
+        return categoryId;
+    }
+
+    public void setCategoryId(int categoryId) {
+        this.categoryId = categoryId;
+    }
 }
