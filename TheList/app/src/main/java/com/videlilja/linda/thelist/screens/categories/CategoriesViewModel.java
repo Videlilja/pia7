@@ -42,4 +42,9 @@ public class CategoriesViewModel extends AndroidViewModel {
     }
 
 
+    public void addCategory(String categoryName) {
+        CategoriesEntry entry = new CategoriesEntry();
+        entry.setCategoryName(categoryName);
+        mListEntryRepository.create(entry);
+    }
 }
