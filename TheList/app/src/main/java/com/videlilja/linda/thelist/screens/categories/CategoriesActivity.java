@@ -6,7 +6,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
@@ -15,11 +14,9 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 
 import com.videlilja.linda.thelist.R;
 import com.videlilja.linda.thelist.model.CategoriesEntry;
-import com.videlilja.linda.thelist.screens.categories.Create.CreateActivity;
 
 import java.util.List;
 
@@ -38,11 +35,13 @@ public class CategoriesActivity extends AppCompatActivity {
 
         RecyclerView categoryList = findViewById(R.id.category_list);
         categoryList.setLayoutManager(new LinearLayoutManager(this));
-        categoryList.setAdapter(new CategoriesAdapter());
+        final CategoriesAdapter adapter = new CategoriesAdapter();
+        categoryList.setAdapter(adapter);
         viewModel.getCategory().observe(this, new Observer <List <CategoriesEntry>>() {
             @Override
             public void onChanged(@Nullable List <CategoriesEntry> listEntries) {
-                Log.d(TAG, "onChanged() called with: listEntries = [" + listEntries + "]");
+                Log.d(TAG, "onChanged() called with: listEntries = [" + listEntries.size() + "]");
+                adapter.setCategoriesEntries(listEntries);
             }
         });
 

@@ -14,12 +14,12 @@ import java.util.List;
 
 public class CategoriesAdapter extends RecyclerView.Adapter<categoriesViewHolder> {
 
-    private List<CategoriesEntry> ListEntryList = new ArrayList<>();
+    private List<CategoriesEntry> categoriesEntries = new ArrayList<>();
 
 
     @Override
     public int getItemCount() {
-        return ListEntryList.size();
+        return categoriesEntries.size();
     }
     @Override
     public categoriesViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
@@ -28,11 +28,11 @@ public class CategoriesAdapter extends RecyclerView.Adapter<categoriesViewHolder
 
     @Override
     public void onBindViewHolder(categoriesViewHolder holder, int position) {
-        holder.bind(ListEntryList.get(position));
+        holder.bind(categoriesEntries.get(position));
     }
 
-    public void setListEntryList(List<CategoriesEntry> listEntryList) {
-        ListEntryList = listEntryList;
+    public void setCategoriesEntries(List<CategoriesEntry> categoriesEntries) {
+        this.categoriesEntries = categoriesEntries;
         notifyDataSetChanged();
     }
 }

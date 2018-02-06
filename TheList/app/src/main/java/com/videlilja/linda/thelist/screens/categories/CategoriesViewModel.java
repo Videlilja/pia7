@@ -7,6 +7,7 @@ import android.arch.lifecycle.MutableLiveData;
 import android.arch.lifecycle.ViewModel;
 import android.arch.persistence.room.Room;
 import android.support.annotation.NonNull;
+import android.util.Log;
 
 import com.videlilja.linda.thelist.model.CategoriesEntry;
 import com.videlilja.linda.thelist.model.ListEntryRepository;
@@ -20,8 +21,8 @@ import java.util.List;
  */
 
 public class CategoriesViewModel extends AndroidViewModel {
-    private MutableLiveData <List <CategoriesEntry>> category = new MutableLiveData <>();
 
+    private static final String TAG = "CategoriesViewModel";
     private ListEntryRepository mListEntryRepository;
 
     public CategoriesViewModel(@NonNull final Application application) {
@@ -31,7 +32,9 @@ public class CategoriesViewModel extends AndroidViewModel {
         TheListDatabase db = Room.databaseBuilder(
                 application,
                 TheListDatabase.class,
-                "thelistdatabase.db").build();
+                "thelistdatabase.db")
+                .allowMainThreadQueries()
+                .build();
 
         mListEntryRepository = new ListEntryRepository(db.getListEntrydao());
 
@@ -43,6 +46,7 @@ public class CategoriesViewModel extends AndroidViewModel {
 
 
     public void addCategory(String categoryName) {
+        Log.d(TAG, "addCategory() called with: categoryName = [" + categoryName + "]");
         CategoriesEntry entry = new CategoriesEntry();
         entry.setCategoryName(categoryName);
         mListEntryRepository.create(entry);
