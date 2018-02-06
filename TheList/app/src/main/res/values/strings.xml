@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">TheList</string>
+    <string name="create_Categories">Create Category</string>
+    <string name="category_name">Category</string>
+    <string name="save_button">Save</string>
+    <string name="create_categories">Create new category</string>
 </resources>
