@@ -4,4 +4,11 @@
     <string name="category_name">Category</string>
     <string name="save_button">Save</string>
     <string name="create_categories">Create new category</string>
+    <string name="save_item_button">Save</string>
+    <string name="enter_item">Enter item</string>
+    <string name="text_example">Example.. Buy milk</string>
+    <string name="example_text">Buy milk</string>
+    <string name="example_quantity">2</string>
+    <string name="enter_text">Enter text</string>
+    <string name="enter_quantity">Enter quantity</string>
 </resources>
