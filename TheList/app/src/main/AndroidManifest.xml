@@ -20,7 +20,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".screens.categories.Create.CreateActivity"></activity>
+        <activity android:name=".screens.categories.Activity1" />
+        <activity android:name=".screens.categories.Activity2" />
+        <activity android:name=".screens.categories.Activity3"></activity>
     </application>
 
 </manifest>
