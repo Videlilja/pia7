@@ -7,7 +7,7 @@ import android.arch.persistence.room.PrimaryKey;
 /**
  * Created by Linda on 2018-01-30.
  */
-@Entity(tableName = "list_entries")
+@Entity(tableName = "item_entries")
 public class ItemsEntry {
 
     @PrimaryKey(autoGenerate = true)
@@ -18,6 +18,10 @@ public class ItemsEntry {
 
     @ColumnInfo(name = "itemName")
     private String itemName;
+
+    public void setItemName(String itemName) {
+        this.itemName = itemName;
+    }
 
     public int getId() {
         return id;

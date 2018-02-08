@@ -18,10 +18,10 @@ public interface ItemsEntryDao {
     @Insert
     void insert(ItemsEntry...entries);
 
-    @Query("SELECT * FROM ItemsEntry")
+    @Query("SELECT * FROM item_entries")
     LiveData<List<ItemsEntry>> read();
 
-    @Query("SELECT * FROM ItemsEntry WHERE categoryId LIKE :id")
+    @Query("SELECT * FROM item_entries WHERE categoryId LIKE :id")
     LiveData<List<ItemsEntry>> readByCategory(int id);
 
     @Update
