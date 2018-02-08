@@ -16,6 +16,11 @@ public class CategoriesAdapter extends RecyclerView.Adapter<categoriesViewHolder
 
     private List<CategoriesEntry> categoriesEntries = new ArrayList<>();
 
+    private categoriesViewHolder.OnCategoryClicked listener;
+
+    public CategoriesAdapter(categoriesViewHolder.OnCategoryClicked listener) {
+        this.listener = listener;
+    }
 
     @Override
     public int getItemCount() {
@@ -23,7 +28,7 @@ public class CategoriesAdapter extends RecyclerView.Adapter<categoriesViewHolder
     }
     @Override
     public categoriesViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        return categoriesViewHolder.newInstance(parent);
+        return categoriesViewHolder.newInstance(parent, listener);
     }
 
     @Override

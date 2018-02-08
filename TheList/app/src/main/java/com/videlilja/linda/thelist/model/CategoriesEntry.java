@@ -32,5 +32,11 @@ public class CategoriesEntry {
         this.categoryName = categoryName;
     }
 
-
+    @Override
+    public String toString() {
+        return "CategoriesEntry{" +
+                "id=" + id +
+                ", categoryName='" + categoryName + '\'' +
+                '}';
+    }
 }

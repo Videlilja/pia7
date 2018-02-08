@@ -21,9 +21,13 @@ public interface ItemsEntryDao {
     @Query("SELECT * FROM ItemsEntry")
     LiveData<List<ItemsEntry>> read();
 
+    @Query("SELECT * FROM ItemsEntry WHERE categoryId LIKE :id")
+    LiveData<List<ItemsEntry>> readByCategory(int id);
+
     @Update
     void update(ItemsEntry...entries);
 
     @Delete
     void delete(ItemsEntry...entries);
 }
+

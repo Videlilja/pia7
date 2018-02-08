@@ -18,8 +18,15 @@ public class categoriesViewHolder extends RecyclerView.ViewHolder {
     private CategoriesEntry listEntry;
     private TextView categoryName;
 
-    public categoriesViewHolder(View itemView) {
+    public categoriesViewHolder(View itemView, final OnCategoryClicked listener) {
         super(itemView);
+
+        itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                listener.onCategoryClicked(listEntry);
+            }
+        });
 
         categoryName = itemView.findViewById(R.id.category_name);
     }
@@ -28,9 +35,15 @@ public class categoriesViewHolder extends RecyclerView.ViewHolder {
 
         categoryName.setText(entry.getCategoryName());
     }
-    public static categoriesViewHolder newInstance(ViewGroup parent){
+
+    public interface OnCategoryClicked {
+        void onCategoryClicked(CategoriesEntry entry);
+    }
+
+    public static categoriesViewHolder newInstance(ViewGroup parent, OnCategoryClicked listener){
         return new categoriesViewHolder(
-                LayoutInflater.from(parent.getContext()).inflate(R.layout.category_entry_list, parent, false)
+                LayoutInflater.from(parent.getContext()).inflate(R.layout.category_entry_list, parent, false),
+                listener
         );
     }
 }

@@ -1,5 +1,6 @@
 package com.videlilja.linda.thelist.screens.categories;
 
+import android.app.Activity;
 import android.arch.lifecycle.Observer;
 import android.arch.lifecycle.ViewModelProviders;
 import android.content.Context;
@@ -12,30 +13,43 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ListView;
 
 import com.videlilja.linda.thelist.R;
 import com.videlilja.linda.thelist.model.CategoriesEntry;
+import com.videlilja.linda.thelist.screens.items.ItemActivity;
 
 import java.util.List;
 
 public class CategoriesActivity extends AppCompatActivity {
+    ListView listView;
 
     private static final String TAG = "CategoriesActivity";
     private CategoriesViewModel viewModel;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_categories);
 
+
         viewModel = ViewModelProviders.of(this).get(CategoriesViewModel.class);
 
 
         RecyclerView categoryList = findViewById(R.id.category_list);
         categoryList.setLayoutManager(new LinearLayoutManager(this));
-        final CategoriesAdapter adapter = new CategoriesAdapter();
+        final CategoriesAdapter adapter = new CategoriesAdapter(new categoriesViewHolder.OnCategoryClicked() {
+            @Override
+            public void onCategoryClicked(CategoriesEntry entry) {
+                Log.d(TAG, "onCategoryClicked() called with: entry = [" + entry + "]");
+                ItemActivity.start(CategoriesActivity.this, entry.getId());
+            }
+        });
         categoryList.setAdapter(adapter);
         viewModel.getCategory().observe(this, new Observer <List <CategoriesEntry>>() {
             @Override
@@ -90,3 +104,5 @@ public class CategoriesActivity extends AppCompatActivity {
 
 
 }
+
+

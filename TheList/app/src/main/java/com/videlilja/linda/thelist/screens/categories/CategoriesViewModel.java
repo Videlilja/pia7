@@ -3,8 +3,6 @@ package com.videlilja.linda.thelist.screens.categories;
 import android.app.Application;
 import android.arch.lifecycle.AndroidViewModel;
 import android.arch.lifecycle.LiveData;
-import android.arch.lifecycle.MutableLiveData;
-import android.arch.lifecycle.ViewModel;
 import android.arch.persistence.room.Room;
 import android.support.annotation.NonNull;
 import android.util.Log;
@@ -12,7 +10,6 @@ import android.util.Log;
 import com.videlilja.linda.thelist.model.CategoriesEntry;
 import com.videlilja.linda.thelist.model.ListEntryRepository;
 import com.videlilja.linda.thelist.model.TheListDatabase;
-import com.videlilja.linda.thelist.model.CategoriesEntry;
 
 import java.util.List;
 
@@ -36,7 +33,7 @@ public class CategoriesViewModel extends AndroidViewModel {
                 .allowMainThreadQueries()
                 .build();
 
-        mListEntryRepository = new ListEntryRepository(db.getListEntrydao());
+        mListEntryRepository = new ListEntryRepository(db.getCategoryEntrydao());
 
     }
 
