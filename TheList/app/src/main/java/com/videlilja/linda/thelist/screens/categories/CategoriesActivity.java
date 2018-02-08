@@ -53,6 +53,8 @@ public class CategoriesActivity extends AppCompatActivity {
         });
     }
 
+
+
     private void openCreateDialog(View v) {
         AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(this);
         View view = getLayoutInflater().inflate(R.layout.categories_popup, null);
