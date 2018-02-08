@@ -36,4 +36,11 @@ public class ItemsViewModel extends AndroidViewModel {
     public LiveData<List<ItemsEntry>> getListItemsById(int categoryId) {
         return listEntryDao.readByCategory(categoryId);
     }
+
+    public void create(int categoryId, String name, int number) {
+        ItemsEntry entry = new ItemsEntry();
+        entry.setCategoryId(categoryId);
+        entry.setItemName(name);
+        listEntryDao.insert(entry);
+    }
 }
