@@ -13,6 +13,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:text="Write Name Of List"
+<<<<<<< HEAD
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -26,6 +27,8 @@
         android:layout_marginEnd="8dp"
         android:layout_marginTop="8dp"
         android:text="TextView"
+=======
+>>>>>>> ef718c02f36c171a0b60a5d8f2a693471da46194
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
