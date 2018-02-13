@@ -19,16 +19,19 @@ public class ItemsViewHolder extends RecyclerView.ViewHolder {
     private ItemsEntry listEntry;
 
     private TextView itemName;
+    private TextView quantityName;
 
     public ItemsViewHolder(View itemView) {
         super(itemView);
 
         itemName = itemView.findViewById(R.id.item_name);
+        quantityName =  itemView.findViewById(R.id.quantity_textview);
     }
     public void bind(ItemsEntry entry){
         listEntry = entry;
 
         itemName.setText(entry.getItemName());
+        quantityName.setText((entry.getItemName()));
     }
     public static ItemsViewHolder NewInstance(ViewGroup parent){
         return new ItemsViewHolder(
