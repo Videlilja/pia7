@@ -41,6 +41,7 @@ public class ItemsViewModel extends AndroidViewModel {
         ItemsEntry entry = new ItemsEntry();
         entry.setCategoryId(categoryId);
         entry.setItemName(name);
+        entry.setQuantity(number);
         listEntryDao.insert(entry);
     }
 }

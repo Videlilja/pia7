@@ -19,6 +19,17 @@ public class ItemsEntry {
     @ColumnInfo(name = "itemName")
     private String itemName;
 
+    @ColumnInfo(name = "quantity")
+    private int quantity;
+
+    public int getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
+    }
+
     public void setItemName(String itemName) {
         this.itemName = itemName;
     }
