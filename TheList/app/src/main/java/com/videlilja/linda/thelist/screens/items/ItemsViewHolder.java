@@ -8,6 +8,7 @@ import android.widget.TextView;
 
 import com.videlilja.linda.thelist.R;
 import com.videlilja.linda.thelist.model.CategoriesEntry;
+import com.videlilja.linda.thelist.model.ItemsEntry;
 
 /**
  * Created by Linda on 2018-01-26.
@@ -15,7 +16,7 @@ import com.videlilja.linda.thelist.model.CategoriesEntry;
 
 public class ItemsViewHolder extends RecyclerView.ViewHolder {
 
-    private CategoriesEntry listEntry;
+    private ItemsEntry listEntry;
 
     private TextView itemName;
 
@@ -24,10 +25,10 @@ public class ItemsViewHolder extends RecyclerView.ViewHolder {
 
         itemName = itemView.findViewById(R.id.item_name);
     }
-    public void bind(CategoriesEntry entry){
+    public void bind(ItemsEntry entry){
         listEntry = entry;
 
-        itemName.setText(entry.getCategoryName());
+        itemName.setText(entry.getItemName());
     }
     public static ItemsViewHolder NewInstance(ViewGroup parent){
         return new ItemsViewHolder(

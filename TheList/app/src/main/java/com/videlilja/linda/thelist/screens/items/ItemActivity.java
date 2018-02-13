@@ -17,7 +17,11 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import com.videlilja.linda.thelist.R;
+import com.videlilja.linda.thelist.model.CategoriesEntry;
 import com.videlilja.linda.thelist.model.ItemsEntry;
+import com.videlilja.linda.thelist.screens.categories.CategoriesActivity;
+import com.videlilja.linda.thelist.screens.categories.CategoriesAdapter;
+import com.videlilja.linda.thelist.screens.categories.categoriesViewHolder;
 
 import java.util.List;
 
@@ -39,18 +43,23 @@ public class ItemActivity extends AppCompatActivity {
 
         Log.d("CategoriesActivity", "onCreate: " + categoryId);
 
+        //RecyclerView
+        RecyclerView itemList = findViewById(R.id.item_list);
+        itemList.setLayoutManager(new LinearLayoutManager(this));
+        final ItemsAdapter adapter = new ItemsAdapter();
+        itemList.setAdapter(adapter);
+
         viewModel = ViewModelProviders.of(this).get(ItemsViewModel.class);
         viewModel.getListItemsById(categoryId).observe(this, new Observer <List <ItemsEntry>>() {
             @Override
             public void onChanged(@Nullable List <ItemsEntry> itemsEntries) {
                 Log.d(TAG, "onChanged() called with: itemsEntries = [" + itemsEntries.size() + "]");
+                adapter.setListEntryList(itemsEntries);
+
             }
         });
 
-        //RecyclerView
-        RecyclerView itemList = findViewById(R.id.item_list);
-        itemList.setLayoutManager(new LinearLayoutManager(this));
-        itemList.setAdapter(new ItemsAdapter());
+
 
         findViewById(R.id.itemaddbutton).setOnClickListener(new View.OnClickListener() {
             @Override

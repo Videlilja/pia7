@@ -4,6 +4,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.ViewGroup;
 
 import com.videlilja.linda.thelist.model.CategoriesEntry;
+import com.videlilja.linda.thelist.model.ItemsEntry;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -14,7 +15,7 @@ import java.util.List;
 
 public class ItemsAdapter extends RecyclerView.Adapter<ItemsViewHolder> {
 
-    private List<CategoriesEntry> listEntryList = new ArrayList<>();
+    private List<ItemsEntry> listEntryList = new ArrayList<>();
 
     @Override
     public int getItemCount() {
@@ -32,7 +33,7 @@ public class ItemsAdapter extends RecyclerView.Adapter<ItemsViewHolder> {
 
     }
 
-    public void setListEntryList(List<CategoriesEntry> listEntryList) {
+    public void setListEntryList(List<ItemsEntry> listEntryList) {
         this.listEntryList = listEntryList;
         notifyDataSetChanged();
     }
