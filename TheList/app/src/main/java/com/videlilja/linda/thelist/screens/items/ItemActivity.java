@@ -70,11 +70,6 @@ public class ItemActivity extends AppCompatActivity {
     }
 
 
-
-
-
-
-
     private void openCreateDialog(View v) {
         AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(this);
         View view = getLayoutInflater().inflate(R.layout.item_popup, null);
