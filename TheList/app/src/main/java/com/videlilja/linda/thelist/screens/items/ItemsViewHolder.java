@@ -33,14 +33,15 @@ public class ItemsViewHolder extends RecyclerView.ViewHolder {
 
         itemName.setText(entry.getItemName());
 
-        if (entry.getQuantity() < 0 ) {
+       /*if (entry.getQuantity() < 0 ) {
             quantity.setText("");
 
         }
 
         else {
             quantity.setText(Integer.toString(entry.getQuantity()));
-        }
+        }*/
+       quantity.setText(entry.getQuantity());
     }
     public static ItemsViewHolder NewInstance(ViewGroup parent){
         return new ItemsViewHolder(

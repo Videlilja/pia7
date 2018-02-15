@@ -15,16 +15,17 @@ import java.util.List;
 @Dao
 public interface CategoriesEntryDao {
 
+
     @Insert
-    void insert(CategoriesEntry...entries);
+    void insert(CategoriesEntry... entries);
 
     @Query("SELECT * FROM list_entries")
     LiveData<List<CategoriesEntry>> read();
 
     @Update
-    void update(CategoriesEntry...entries);
+    void update(CategoriesEntry... entries);
 
     @Delete
-    void delete(CategoriesEntry...entries);
-
+    void delete(CategoriesEntry... entries);
 }
+
