@@ -24,4 +24,8 @@ public class ListEntryRepository {
     public void create(CategoriesEntry entry) {
         mListEntryDao.insert(entry);
     }
+
+    public void delete(CategoriesEntry entry) {
+        mListEntryDao.delete(entry);
+    }
 }

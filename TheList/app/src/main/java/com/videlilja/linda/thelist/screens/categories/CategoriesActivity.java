@@ -11,6 +11,7 @@ import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.helper.ItemTouchHelper;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
@@ -64,7 +65,21 @@ public class CategoriesActivity extends AppCompatActivity {
                 openCreateDialog(v);
             }
         });
-    }
+
+        new ItemTouchHelper(new ItemTouchHelper.SimpleCallback(0,ItemTouchHelper.LEFT| ItemTouchHelper.RIGHT) {
+            @Override
+            public boolean onMove(RecyclerView recyclerView, RecyclerView.ViewHolder viewHolder, RecyclerView.ViewHolder target) {
+                return false;
+            }
+
+            @Override
+            public void onSwiped(RecyclerView.ViewHolder viewHolder, int direction) {
+                categoriesViewHolder holder = (categoriesViewHolder) viewHolder;
+                viewModel.removeItem(holder.getListEntry());
+
+            }
+        }).attachToRecyclerView(categoryList);
+    };
 
 
 
@@ -100,6 +115,7 @@ public class CategoriesActivity extends AppCompatActivity {
 
 
     }
+
 
 
 }

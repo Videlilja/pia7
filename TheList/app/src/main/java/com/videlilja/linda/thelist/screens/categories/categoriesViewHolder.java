@@ -36,6 +36,10 @@ public class categoriesViewHolder extends RecyclerView.ViewHolder {
         categoryName.setText(entry.getCategoryName());
     }
 
+    public CategoriesEntry getListEntry() {
+        return listEntry;
+    }
+
     public interface OnCategoryClicked {
         void onCategoryClicked(CategoriesEntry entry);
     }

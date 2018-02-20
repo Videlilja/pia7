@@ -6,6 +6,7 @@ import android.arch.lifecycle.LiveData;
 import android.arch.persistence.room.Room;
 import android.support.annotation.NonNull;
 import android.util.Log;
+import android.view.View;
 
 import com.videlilja.linda.thelist.model.CategoriesEntry;
 import com.videlilja.linda.thelist.model.ListEntryRepository;
@@ -47,5 +48,10 @@ public class CategoriesViewModel extends AndroidViewModel {
         CategoriesEntry entry = new CategoriesEntry();
         entry.setCategoryName(categoryName);
         mListEntryRepository.create(entry);
+    }
+
+
+    public void removeItem(CategoriesEntry listEntry) {
+        mListEntryRepository.delete(listEntry);
     }
 }

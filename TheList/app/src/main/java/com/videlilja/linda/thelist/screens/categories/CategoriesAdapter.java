@@ -2,9 +2,7 @@ package com.videlilja.linda.thelist.screens.categories;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.ViewGroup;
-
 import com.videlilja.linda.thelist.model.CategoriesEntry;
-
 import java.util.ArrayList;
 import java.util.List;
 
