@@ -94,12 +94,26 @@ public class ItemActivity extends AppCompatActivity {
                     viewModel.create(
                             categoryId,
                             itemName.getText().toString(),
-                            Integer.parseInt(quantityName.getText().toString())
+                            quantityName.getText().toString()
+                   // Integer.parseInt(quantityName.getText().toString())
+
+
                     );
 
                     // Create and save category
                     dialog.dismiss();
                 }
+                else {
+                    viewModel.create(
+                            categoryId,
+                            itemName.getText().toString(),
+                            ""
+                    );
+
+                    // Create and save category
+                    dialog.dismiss();
+                }
+
             }
         });
     }

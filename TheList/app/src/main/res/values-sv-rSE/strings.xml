@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">TheList</string>
+    <string name="save_item_button">Spara</string>
+    <string name="category_name">Kategori</string>
+    <string name="create_Categories">Skapa kategori</string>
+    <string name="save_button">Spara</string>
+    <string name="create_categories">Skapa ny kategori</string>
+    <string name="enter_item">Lägg till artikel</string>
+    <string name="enter_text">Lägg till text</string>
+    <string name="enter_quantity">Lägg till antal</string>
+</resources>

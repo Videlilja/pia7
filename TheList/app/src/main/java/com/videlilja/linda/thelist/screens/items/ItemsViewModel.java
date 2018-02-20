@@ -37,11 +37,11 @@ public class ItemsViewModel extends AndroidViewModel {
         return listEntryDao.readByCategory(categoryId);
     }
 
-    public void create(int categoryId, String name, int number) {
+    public void create(int categoryId, String name, String quantity) {
         ItemsEntry entry = new ItemsEntry();
         entry.setCategoryId(categoryId);
         entry.setItemName(name);
-        entry.setQuantity(number);
+        entry.setQuantity(quantity);
         listEntryDao.insert(entry);
     }
 }

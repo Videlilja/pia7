@@ -2,7 +2,7 @@
 <layer-list xmlns:android="http://schemas.android.com/apk/res/android">
     <item android:drawable="@color/colorPrimary"></item>
     <item>
-        <bitmap android:src="@drawable/splash"
+        <bitmap android:src="@drawable/screen"
             android:gravity="center"/>
 
     </item>
