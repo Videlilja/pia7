@@ -1,14 +1,12 @@
 package com.videlilja.linda.thelist.screens.items;
 
 import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.helper.ItemTouchHelper;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.videlilja.linda.thelist.R;
-import com.videlilja.linda.thelist.model.CategoriesEntry;
 import com.videlilja.linda.thelist.model.ItemsEntry;
 
 /**
@@ -17,7 +15,7 @@ import com.videlilja.linda.thelist.model.ItemsEntry;
 
 public class ItemsViewHolder extends RecyclerView.ViewHolder {
 
-    private ItemsEntry listEntry;
+    private ItemsEntry itemsEntry;
 
     private TextView itemName;
     private TextView quantity;
@@ -30,9 +28,12 @@ public class ItemsViewHolder extends RecyclerView.ViewHolder {
 
     }
 
+    public ItemsEntry getItemsEntry() {
+        return itemsEntry;
+    }
 
     public void bind(ItemsEntry entry){
-        listEntry = entry;
+        itemsEntry = entry;
 
         itemName.setText(entry.getItemName());
 
@@ -53,5 +54,6 @@ public class ItemsViewHolder extends RecyclerView.ViewHolder {
         );
 
     }
+
 
 }

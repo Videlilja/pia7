@@ -6,6 +6,7 @@ import android.arch.lifecycle.LiveData;
 import android.arch.lifecycle.ViewModel;
 import android.arch.persistence.room.Room;
 
+import com.videlilja.linda.thelist.model.CategoriesEntry;
 import com.videlilja.linda.thelist.model.ItemsEntry;
 import com.videlilja.linda.thelist.model.ItemsEntryDao;
 import com.videlilja.linda.thelist.model.TheListDatabase;
@@ -43,5 +44,9 @@ public class ItemsViewModel extends AndroidViewModel {
         entry.setItemName(name);
         entry.setQuantity(quantity);
         listEntryDao.insert(entry);
+    }
+
+    public void removeItem( ItemsEntry itemsEntry) {
+        listEntryDao.delete(itemsEntry);
     }
 }

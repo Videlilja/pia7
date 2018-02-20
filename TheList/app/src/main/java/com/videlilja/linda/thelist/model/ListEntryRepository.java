@@ -28,4 +28,6 @@ public class ListEntryRepository {
     public void delete(CategoriesEntry entry) {
         mListEntryDao.delete(entry);
     }
+
 }
+

@@ -1,7 +1,6 @@
 package com.videlilja.linda.thelist.screens.items;
 
 import android.arch.lifecycle.Observer;
-import android.arch.lifecycle.ViewModel;
 import android.arch.lifecycle.ViewModelProviders;
 import android.content.Context;
 import android.content.Intent;
@@ -11,17 +10,14 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.helper.ItemTouchHelper;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
 import com.videlilja.linda.thelist.R;
-import com.videlilja.linda.thelist.model.CategoriesEntry;
 import com.videlilja.linda.thelist.model.ItemsEntry;
-import com.videlilja.linda.thelist.screens.categories.CategoriesActivity;
-import com.videlilja.linda.thelist.screens.categories.CategoriesAdapter;
-import com.videlilja.linda.thelist.screens.categories.categoriesViewHolder;
 
 import java.util.List;
 
@@ -59,14 +55,28 @@ public class ItemActivity extends AppCompatActivity {
             }
         });
 
-
-
         findViewById(R.id.itemaddbutton).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 openCreateDialog(v);
             }
         });
+
+        new ItemTouchHelper(new ItemTouchHelper.SimpleCallback(0,ItemTouchHelper.LEFT| ItemTouchHelper.RIGHT) {
+            @Override
+            public boolean onMove(RecyclerView recyclerView, RecyclerView.ViewHolder viewHolder, RecyclerView.ViewHolder target) {
+                return false;
+            }
+
+            @Override
+            public void onSwiped(RecyclerView.ViewHolder viewHolder, int direction) {
+                ItemsViewHolder holder = (ItemsViewHolder) viewHolder;
+                viewModel.removeItem(holder.getItemsEntry());
+
+            }
+        }).attachToRecyclerView(itemList);
+
+
     }
 
 
